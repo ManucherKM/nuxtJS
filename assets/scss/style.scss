@@ -1,0 +1,122 @@
+@import "__delet.scss";
+
+$text-color: #fff;
+$text-active-color: #DD5A1B;
+$text-disable-color: #8B8484;
+
+* {
+    color: $text-color;
+}
+
+body {
+    background: #1D1F23;
+}
+
+p {
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.app {
+    .app-list {
+        display: flex;
+        align-items: center;
+        padding-top: 74px;
+        width: 218px;
+        justify-content: space-evenly;
+    }
+
+    .element__link {
+        color: $text-disable-color;
+        font-weight: 500;
+        white-space: nowrap;
+        position: relative;
+    }
+
+
+    .element__link:hover {
+        color: $text-active-color;
+        text-decoration: none;
+    }
+
+    .element__link:focus {
+        color: $text-active-color;
+    }
+
+    .element__link:after {
+        content: "";
+        position: absolute;
+        width: 150%;
+        height: 2px;
+        background-color: $text-active-color;
+        top: 130%;
+        left: -25%;
+        right: 0;
+        transform: scaleX(0);
+        transition: transform 0.25s;
+        transform-origin: right;
+    }
+
+    .element__link:hover:after {
+        content: "";
+        transform: scaleX(1);
+        transition: transform 0.25s;
+        transform-origin: left;
+    }
+
+    .element__link:focus:after {
+        content: "";
+        transform: scaleX(1);
+        transition: transform 0.25s;
+        transform-origin: left;
+    }
+
+    .app__comment-parent {
+        width: 100%;
+        background: #2B2E35;
+        border-radius: 10px;
+        margin-top: 30px;
+    }
+
+    .app__comment-nav {
+        padding-top: 60px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .app__comment-container {
+        max-width: 1007px;
+        margin: 0 auto;
+    }
+
+    .comment__block-name {
+        display: flex;
+        justify-content: space-between;
+        max-width: 257px;
+    }
+
+    .block-name__title {
+        font-size: 20px;
+    }
+
+    .block-name__subtitle {
+        color: #8B8484;
+    }
+
+    .grade__img {
+        width: 29px;
+        height: auto;
+    }
+
+    .comment-nav__grade {
+        display: flex;
+        max-width: 156px;
+        justify-content: space-between;
+    }
+
+
+}
